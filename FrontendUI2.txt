@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            joomin joomout
+        </title>
+        <script type="text/Javascript">
+        var width=100;
+        var id=0;
+        function increase()
+        {
+            id=setInterval(raise,18);
+        }
+        function decrease()
+        {
+            clearInterval(id);
+            id=setInterval(down,18);
+        }
+        function raise()
+        {
+            var img=document.getElementById("i1");
+            if(width<200)
+            {
+                width=width+2;
+                img.style.width=width;
+            }
+            else
+            {
+                clearInterval(id);
+            }
+        }
+        function down()
+        {
+            var img=document.getElementById("i1");
+            if(width>100)
+            {
+                width=width-2;
+                img.style.width=width;
+            }
+            else
+            {
+                clearInterval(id);
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <br><br><center><img src="images/heart.jfif" id="i1" onmouseover="increase()" onmouseout="decrease()" width=100></center>
+    </body>
+</html>
